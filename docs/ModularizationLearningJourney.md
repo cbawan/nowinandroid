@@ -67,7 +67,7 @@ The Now in Android app contains the following types of modules:
 
 ### The `app` module
 This contains app level and scaffolding classes that bind the rest of the codebase, such as
-`MainActivity`, `NiaApp` and app-level controlled navigation. A good example of this is the navigation setup through `NiaNavHost` and the bottom navigation bar setup through `TopLevelDestination`. The `app` module depends on all `feature` modules and required `core` modules.
+`MainActivity`, `NiaApp` and app-level controlled navigation. A good example of this is the navigation setup in `NiaApp`, which combines each feature's entries in an `entryProvider` displayed by `NavDisplay`, and the top level navigation items setup through `TopLevelNavItem`. The `app` module depends on all `feature` modules and required `core` modules.
 
 ### Feature modules 
 These are feature-specific modules that handle a single responsibility in the app. For example, the `ForYou` feature handles all content and UI state for the "ForYou" screen. Feature modules aren't Gradle modules themselves, they are split into two submodules: 
@@ -104,7 +104,7 @@ For example, `sync`, `benchmark` and `test` modules, as well as `app-nia-catalog
    <td>Brings everything together required for the app to function correctly. This includes UI scaffolding and navigation. 
    </td>
    <td><code>NiaApp, MainActivity</code><br>
-   App-level controlled navigation via <code>NiaNavHost, NiaAppState, TopLevelDestination</code>
+   App-level controlled navigation via <code>NiaAppState, TopLevelNavItem</code>
    </td>
   </tr>
   <tr>
